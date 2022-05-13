@@ -423,26 +423,16 @@ nav {
     margin: 0;
 }
 
-.form-details, .form-details-login {
+.form-details {
     grid-area: contact;
     background-color: #5B6545;
     box-shadow: 5px 5px 10px #28331391;
+    width: 60%;
     height: auto;
     border-radius: 20px;  
     padding: 0 1em 1.5em 1em; 
     margin:  0 auto 5em auto;
 }
-
-.form-details-login {
-    width: 60%;
-}
-
-@media (min-width: 1200px) {
-    .form-details-login {
-        max-width: 80%;
-    }
-}
-
 
 .signup {
     min-width: 80%;
@@ -491,9 +481,9 @@ form .submit {
 .new-user {
     background-color: #c8d4ae;
     border-radius: 5px;
-    width: 65%;
+    width: 250px;
     height: 35px;
-    font-size: 1.1rem;
+    font-size: 20px;
     border: none;    
     color: var(--sub-color);
     font-family: var(--subfont);
@@ -966,11 +956,6 @@ form .submit:hover, .new-user:hover {
     .map {
         margin-top: 1.2em;
         width: 90%;
-    }
-
-    .new-user {
-        width: 80%;
-        font-size: 1em;
     }
 
 

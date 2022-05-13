@@ -14,7 +14,7 @@ def index(request):
     return render(request, 'pages/index.html')
 
 def shop(request):
-    product = Product.objects.all() #allows access to all products
+    product = Product.objects.all() #sql equivalent to * (all)
     return render(request, 'pages/shop.html', {'products' : product})
 
 def categories(request):
@@ -31,8 +31,15 @@ def category_list(request, category_slug):
     products = Product.objects.filter(category=category)
     return render(request, 'pages/category.html', {'category': category, 'products' : products })
 
-# def cart(request):
-#     return render(request, 'pages/index.html')
+def cart(request):
+    # if request.session.has_key('username'):
+    #     return render(request, 'pages/profile.html', { 'username' : request.session['username'] })
+
+    # else:
+    #     request.session['error'] = 'You need to login first.'
+    #     return redirect('/login')
+
+    return render(request, 'pages/index.html')
 
 def contact(request):
     if request.method == 'POST':
@@ -110,13 +117,16 @@ def signup(request):
 
             request.session['firstName'] = fname
             request.session['lastName'] = lname
+            # request.session['email'] = userEmail
             request.session['username'] = username
            
         return redirect('profile')
             
+
     else: 
         form = signUpForm()
         return render(request, 'pages/signup.html', { 'signUpForm' : form })
+
 
 def logoutUser(request):
     del request.session['username']    
@@ -127,5 +137,12 @@ def logoutUser(request):
 
 # def newsletter(request):
 #     subscribe = subscribersForm()
-#     return { 'sub_email' : subscribe }
+#     return render(request, 'layout.html', { 'sub_email' : subscribe })
 
+
+###########
+
+
+# def all_products(request):
+#     products = Product.objects.all()
+#     return render(request, 'pages/shop.html', {'products': products})

@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+
 from xyStashStore import views
+
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,10 +27,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
+    #path('shop', include('xyStashStore.urls', namespace='store')), #extending url
     path('shop', views.shop, name="shop"),
     path('item/<slug:slug>/', views.product_detail, name="product_detail"),
     path('search/<slug:category_slug>/', views.category_list, name='category_list'),
-    # path('cart', views.cart, name="cart"),
+    path('cart', views.cart, name="cart"),
     path('contact', views.contact, name="contact"),
     path('profile', views.profile, name="profile"),
     path('login', views.login, name="login"),
@@ -36,6 +40,6 @@ urlpatterns = [
     # path('newsletter', views.newsletter, name="newsletter"),
 ]
 
-#Will allow access to local storage. settings.DEBUG should not be used in production mode. (check bottom code for settings.py)
+#configure so we can use the media folder
 if settings.DEBUG: 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

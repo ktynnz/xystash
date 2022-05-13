@@ -35,8 +35,7 @@ class fromContactForm(models.Model):
 
 
 # class subscriber(models.Model):
-#     sub_email = models.CharField(max_length=100)
-#     created = models.DateTimeField(default=timezone.now)
+#     sub_email = models.CharField(max_length=50)
 
 #     def __str__(self):
 #         return self.sub_email
