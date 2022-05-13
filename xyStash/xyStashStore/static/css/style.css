@@ -423,15 +423,25 @@ nav {
     margin: 0;
 }
 
-.form-details {
+.form-details, .form-details-login {
     grid-area: contact;
     background-color: #5B6545;
     box-shadow: 5px 5px 10px #28331391;
-    width: 60%;
+  
     height: auto;
     border-radius: 20px;  
     padding: 0 1em 1.5em 1em; 
     margin:  0 auto 5em auto;
+}
+
+.form-details-login {
+    width: 60%;
+}
+
+@media (min-width: 1200px) {
+    .form-details-login {
+        max-width: 80%;
+    }
 }
 
 .signup {
@@ -481,7 +491,7 @@ form .submit {
 .new-user {
     background-color: #c8d4ae;
     border-radius: 5px;
-    width: 250px;
+    /* width: 250px; */
     height: 35px;
     font-size: 20px;
     border: none;    
