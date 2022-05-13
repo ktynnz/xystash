@@ -9,7 +9,11 @@ from .models import Category, Product, user, fromContactForm
 
 admin.site.register(user)
 # admin.site.register(subscriber)
-admin.site.register(fromContactForm)
+
+@admin.register(fromContactForm)
+class fromContactFormAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created']
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
