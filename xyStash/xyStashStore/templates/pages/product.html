@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %} {{ product.title }} - xyStash {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="product-details">
+    <main>
+        <div class="product-detail-wrap">
+            <div class="product-thumbnail">
+                <img class="product-img" src="{{ product.image.url }}">
+            </div>
+
+            <div class="product-about">
+                <h1>${{ product.price }}</h1>
+                <h2>{{ product.title }}</h2>
+                <div class="buy">
+                    <button class="add-to-cart">Add to cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div><br>
+                <p>{{ product.description }}</p>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<title>{% block title %} Home - xyStash {% endblock %}</title>
+</head>
+
+<header>
+	<nav>
+
+		<div class="logo">
+			<h2><a href="/">xy stash</a></h2>
+		</div>
+
+		<ul class="primary-nav">
+			<li class="active">
+				<a href="/">home</a>
+			</li>
+			<li>
+				<a href="/shop">shop</a>
+			</li>
+			<li>
+				<a href="/contact">contact</a>
+			</li>
+		</ul>
+
+		<ul class="secondary-nav">
+			<li class="user">
+				<a href="/profile"><img src="{% static 'img/shopping-cart.png' %}"></a>
+			</li>
+			<p class="cart-total">0</p>
+
+			<li class="user">
+				<a href="/login"><img src="{% static 'img/icon-head.png' %}"></a>
+			</li>
+
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</ul>
+
+	</nav>
+</header>
+
+<body>
+
+	{% block content %}
+	{% endblock %}
+
+</body>
+
+<footer>
+	<script src="{% static 'js/script.js' %}"></script>
+
+	<section>
+		<div class="footer-main flex">
+			<div class="lettermail footer-box">
+				<p><b>newsletter</b><br>
+					We will let you know when we have new arrivals and special promos!
+					<br><input type="text" id="newsletter-email" name="newsletter" placeholder="your email here">
+
+					<!-- <form class="subscribe-newsletter" action="/newsletter" method="post">
+						{% csrf_token %}
+						{{ sub_email }}
+						<input id="submit" type="submit" value="SUBSCRIBE">
+					</form> -->
+
+					<input class="btn-newsletter" type="submit" value="SUBSCRIBE">
+				</p>
+			</div>
+
+			<div class="store-socmed footer-box logo-font">
+				<h1>xy stash</h1><br>
+				<span style="word-spacing: 10px;">flowers | food | fashion</span>
+				<br>
+				{% load static %}
+				<img src="{% static '/img/icon_fb.png' %}">
+				<img src="{% static '/img/icon_ig.png' %}">
+			</div>
+		</div>
+
+		<p style="word-spacing: 20px; margin-top: 20px;">customerservice@xystash.com | +647-000-0000 | MON-FRI 9AM-5PM
+			<br><span class="designed-by"> &copy;
+				<script>
+					document.write(new Date().getFullYear())
+				</script>
+				&nbsp;&nbsp; | &nbsp;&nbsp; Designed by Krystynne Fernando
+			</span>
+		</p>
+	</section>
+</footer>
+
+</html>

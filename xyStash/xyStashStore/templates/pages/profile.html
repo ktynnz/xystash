@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %} Profile - xyStash {% endblock %}
+{% block content %}
+{% load static %}
+<main class="padding-main1">
+    <div class="profile-wrapper">
+        <div class="profile-account">
+            <div class="content-with-img">
+                <div class="img-profile">
+                </div>
+                <h3 style="font-size: 1.2em;"> {{ username }}</h3>
+                <ul class="profile-menu">
+                    <li>Profile</li>
+                    <li>Account Settings</li>
+                    <li>Favourites</li>
+                </ul>
+            </div>
+            <br>
+            <a href="/logout"><button type="button" class="logout">Log out</button></a>
+        </div>
+        <div class="profile-page">
+            <div class="profile-fave">
+                <strong>
+                    <p class="profile-title">Favourites</p>
+                </strong>
+                <div class="profile-fave-wrapper flex">
+
+                    <img class="img-like" src="{% static 'img/lovecupcakes.jpg' %}">
+                    <img class="img-like" src="{% static 'img/flowers.png' %}">
+                    <img class="img-like" src="{% static 'img/sunflower.jpg' %}">
+
+                </div>
+            </div>
+            <div class="profile-cart">
+                <div class="profile-fave">
+                    <strong>
+                        <p class="profile-title">Cart</p>
+                    </strong>
+                    <div class="cart-fave-wrapper flex">
+                        <div class="cart-order-table">
+                            <h3 style="padding-left: 1em;">Your cart is empty.</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- MAIN END -->
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %} Contact - xyStash {% endblock %}
+{% block content %}
+{% load static %}
+
+<main class="padding-main">
+    <div class="form-center">
+        <div class="form-details signup">
+            <h1 style="text-align: center;"> Sign Up </h1>
+            
+            <form class="form" action="/signup" method="post">
+
+                {% csrf_token %}
+                {{ signUpForm.firstName }}<br><br>
+                {{ signUpForm.lastName }}<br><br>
+                {{ signUpForm.email }}<br><br>
+                {{ signUpForm.username }}<br><br>
+                {{ signUpForm.password }}<br><br>
+                <input class="submit" type="submit" value="sign up">
+                <p style="padding-top: 1px; color:#ebb487;">{{ error }}</p>
+
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

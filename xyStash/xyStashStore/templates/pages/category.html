@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %} Contact - xyStash {% endblock %}
+{% block content %}
+{% load static %}
+
+<main>
+    <div class="wrap">
+        <div class="search">
+            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+            <button type="submit" class="searchButton">search
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="shop-ctgry">
+        <ul class="shop-ctgry-top">
+            <li class="shop-width">
+                <a href="/shop">All Products</a>
+            </li>
+
+            {% for c in categories %}
+            <li class="shop-width">
+                <a href="{{ c.get_absolute_url }}"> {{ c.name|title}} </a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</main>
+
+<div class="products-wrapper">
+    <div class="row">
+
+        {% for product in products %}
+        <div class="shop-col-wrapper">
+            <div class="shop-col">
+                <a href="{{ product.get_absolute_url }}"><img class="thumbnail" src="{{ product.image.url }}">
+                    <div class="box-element product">
+                        <h2><strong>{{ product.title }}</strong></h6>
+                </a>
+                <hr>
+                <h3>${{ product.price }}</h3>
+                <button class="btn-addcart">Add to cart</button>
+                <!-- <a class="/">View</a> -->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

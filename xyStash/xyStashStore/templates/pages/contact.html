@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %} Contact - xyStash {% endblock %}
+{% block content %}
+{% load static %}
+
+<main>
+    <div class="form-wrapper">
+        <div class="form-details">
+            <h1 style="text-align: center;">contact us</h1>
+            <form class="form" action="/contact" method="post">
+
+                {% csrf_token %}
+                Fullname:<br> {{ ContactForm.fullname }} <br><br>
+                Email: <br> {{ ContactForm.email }} <br><br>
+                Message: <br> {{ ContactForm.message }} <br><br>
+                <input class="submit" type="submit" value="Send">
+                <p style="color:#ebb487;">{{ message }}</p>
+
+            </form>
+        </div>
+
+        <div class="map">
+            <h1 style="text-align: center;">come shop with us</h1>
+            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.9581887160866!2d123.15511401523686!3d9.51236228384894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33ab7f38290355e7%3A0xf88b64ed7c772f1e!2sLegaspi%20Street%2C%20Tanjay%20City%2C%20Negros%20Oriental%2C%20Philippines!5e0!3m2!1sen!2sca!4v1651477429772!5m2!1sen!2sca"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1442.9773373305072!2d-79.38723099930436!3d43.669912468785995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34ae7b7df47d%3A0xe2028002e7a6144a!2sBloor%E2%80%93Yonge%20Station!5e0!3m2!1sen!2sca!4v1652422397508!5m2!1sen!2sca"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}

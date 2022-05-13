@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %} Login - xyStash {% endblock %}
+{% block content %}
+{% load static %}
+
+<main class="padding-main">
+    <div class="form-center">
+        <div class="form-details login">
+            <h1 style="text-align: center;"> log in </h1>
+
+            <form class="form" action="/login" method="post">
+                {% csrf_token %}
+                {{ LoginForm.username }} <br><br>
+                {{ LoginForm.password }} <br><br>
+                <input class="submit" type="submit" value="Log in"><br>
+                <p style="padding-top: 1px; color:#ebb487;">{{ error }}</p>
+                <hr class="hr"><br>
+                <a href="/signup">
+                    <button type="button" class="new-user">
+                        Create New Account
+                    </button>
+                </a>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

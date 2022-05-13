@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+
+<div class="category-main-wrap">
+    <div class="category-wrap">
+        <div class="primary-ctgry ctgry-transition">
+            <a href="/search/mothers-day/">
+                <img src="{% static '/img/mothersday.png' %}">
+            </a>
+        </div>
+        <div class="flowers-ctgry ctgry-transition small-box">
+            <a href="/search/flowers/">
+                <img src="{% static '/img/flowers.png' %}">
+                <button class="btn">flowers</button>
+            </a>
+        </div>
+        <div class="fashion-ctgry ctgry-transition small-box">
+            <a href="/search/fashion/">
+                <img src="{% static '/img/fashion.png' %}">
+                <button class="btn">fashion</button>
+            </a>
+        </div>
+        <div class="food-ctgry ctgry-transition small-box">
+            <a href="/search/food/"><img src="{% static '/img/food.png' %} ">
+                <button class="btn">food</button>
+            </a>
+        </div>
+        <div class="gifts-ctgry ctgry-transition small-box">
+            <a href="/search/gifts/"><img src="{% static '/img/gifts.png' %}">
+                <button class="btn">gifts</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- PRODUCT CATEGORIES -->
+    <!-- FOR MUM -->
+    <div class="product-index">
+        <h1 class="product-title">for mum</h1>
+        <div class="product-img-wrap flex">
+            <img class="img-f" src="{% static '/img/products/formum-img-1.jpg' %}">
+            <img class="img-f" src="{% static '/img/products/formum-img-2.jpg' %}">
+            <img class="img-f" src="{% static '/img/products/formum-img-3.jpg' %}">
+            <img class="img-f" src="{% static '/img/products/formum-img-4.jpg' %}">
+        </div>
+    </div>
+
+    <!-- FARM FRESH -->
+    <div class="product-index">
+        <h1 class="product-title">farm fresh</h1>
+        <div class="product-img-wrap flex">
+            <a href="/item/strawberries/">
+                <img class="img-f" src="{% static '/img/products/farm-fresh-1.jpg' %}">
+            </a>
+            <img class="img-f" src="{% static '/img/products/farm-fresh-2.jpg' %}">
+            <img class="img-f" src="{% static '/img/products/farm-fresh-3.jpg' %}">
+            <img class="img-f" src="{% static '/img/products/farm-fresh-4.jpg' %}">
+            <img class="img-f" src="{% static '/img/products/farm-fresh-5.jpg'' %}">
+            </a>
+        </div>
+    </div>
+
+    <!-- INSTAGRAM API-->
+    <div class="product-index">
+        <h1 class="product-title">@xystash &nbsp;&nbsp;&nbsp; #xystash</h1>
+        <div id="instafeed" class="product-img-wrap"></div>
+        <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js">
+        </script>
+        <script type="text/javascript"></script>
+    </div>
+</div>
+
+{% endblock %}
